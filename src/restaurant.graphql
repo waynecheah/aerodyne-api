@@ -1,0 +1,62 @@
+enum StatusEnum {
+  active
+  inactive
+  suspended
+}
+
+input CreateRestaurantInput {
+  image: String
+  latitude: Float!
+  longitude: Float!
+  name: String!
+  type: String!
+  status: StatusEnum
+}
+input UpdateRestaurantInput {
+  _id: ObjectId!
+  image: String
+  latitude: Float
+  longitude: Float
+  name: String!
+  type: String!
+  status: StatusEnum
+}
+
+scalar Date
+scalar ObjectId
+
+type Mutation {
+  createRestaurant(
+    input: CreateRestaurantInput!
+  ): Restaurant
+  removeRestaurant(_id: ObjectId!): Restaurant
+  restoreRestaurant(_id: ObjectId!): Restaurant
+  updateRestaurant(
+    input: UpdateRestaurantInput!
+  ): Restaurant
+}
+
+type Query {
+  restaurant(_id: ObjectId!): Restaurant
+  restaurants: [Restaurant]
+}
+
+type Image {
+  encoding: String!
+  filename: String!
+  mimetype: String!
+  originalName: String!
+}
+
+type Restaurant {
+  _createdOn: Date
+  _id: ObjectId!
+  _ref: Int
+  _updatedOn: Date
+  image: String
+  latitude: Float!
+  longitude: Float!
+  name: String!
+  type: String!
+  status: StatusEnum
+}

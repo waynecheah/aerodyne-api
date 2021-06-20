@@ -1,0 +1,37 @@
+version: '2.3'
+
+services:
+  nodejs:
+    build: .
+    container_name: aerodyne-service
+    image: nestjs-app:1.0.3
+    networks:
+      - backend
+    ports:
+      - "3300:3300"
+    command: ["npm", "run", "start:dev"]
+    restart: always
+    env_file: .env
+    volumes:
+      - type: bind
+        source: .
+        target: /home/api
+
+  mongodb:
+    container_name: aerodyne-db
+    image: "mongo:4.0.25-xenial"
+    networks:
+      - backend
+    ports:
+      - "27017:27017"
+    command: --auth --bind_ip 0.0.0.0 --journal --oplogSize 192 --enableMajorityReadConcern
+    restart: always
+    env_file: .env
+    volumes:
+      - type: bind
+        source: ../db
+        target: /data/db
+
+networks:
+  backend:
+    name: private_net

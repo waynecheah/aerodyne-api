@@ -1,0 +1,50 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#2f7c47",
+      "activityBar.activeBorder": "#422c74",
+      "activityBar.background": "#2f7c47",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#422c74",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "statusBar.background": "#215732",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#2f7c47",
+      "titleBar.activeBackground": "#215732",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#21573299",
+      "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#215732",
+    "peacock.remoteColor": "#f9c3c3",
+    "indentRainbow.colors": [
+      "rgba(255,255,64,0.03)",
+      "rgba(127,255,127,0.03)",
+      "rgba(255,127,255,0.03)",
+      "rgba(79,236,236,0.03)"
+    ],
+    "importSorter.generalConfiguration.sortOnBeforeSave": true,
+    "importSorter.importStringConfiguration.tabSize": 2,
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+    "importSorter.importStringConfiguration.hasSemicolon": false,
+    "importSorter.importStringConfiguration.numberOfEmptyLinesAfterAllImports": 2,
+    "standard.autoFixOnSave": true,
+    "standard.treatErrorsAsWarnings": true,
+    "standard.usePackageJson": true,
+    "standard.engine": "standardx",
+    "editor.tabSize": 2
+  },
+  "extensions": {
+    "recommendations": [
+      "codestream.codestream",
+      "mike-co.import-sorter",
+      "standard.vscode-standard"
+    ]
+  }
+}
