@@ -24,7 +24,7 @@
     <br />
     <a href="https://aerodyne.kokweng.net/">View Demo</a>
     ·
-    <a href="https://github.com/waynecheah/aerodyne-api/-/issues/new">Report Bug</a>
+    <a href="https://github.com/waynecheah/aerodyne-api/issues/new">Report Bug</a>
   </p>
 </p>
 
@@ -160,7 +160,7 @@ _For more examples, please refer to the [Documentation](https://aerodyne-api.kok
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/waynecheah/aerodyne-api/-/issues/new) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/waynecheah/aerodyne-api/issues/new) for a list of proposed features (and known issues).
 
 <!-- CONTACT & SUPPORT -->
 ## Contact / Support
