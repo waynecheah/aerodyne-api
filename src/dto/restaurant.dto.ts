@@ -7,7 +7,9 @@ import {
   IsOptional,
   IsString,
   IsUrl,
-  Length
+  Length,
+  MaxLength,
+  ValidateIf
 } from 'class-validator'
 
 
@@ -16,10 +18,11 @@ class RestaurantDto {
   @IsOptional()
   readonly _id?: string
 
+  @ValidateIf(o => o.image.length > 0)
   @IsUrl()
-  @Length(0, 300)
+  @MaxLength(500)
   @IsOptional()
-  readonly image: string
+  readonly image?: string
 
   @IsLatitude()
   @IsNotEmpty()
@@ -40,7 +43,6 @@ class RestaurantDto {
   readonly type: string
 
   @IsIn(['active', 'inactive', 'suspended'])
-  @Length(2, 100)
   @IsOptional()
   readonly status?: string
 }
