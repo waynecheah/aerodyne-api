@@ -30,6 +30,7 @@ import { RestaurantService } from './restaurant.service'
 
         return err
       },
+      introspection: true,
       playground: true,
       typePaths: ['./**/*.graphql']
     })
