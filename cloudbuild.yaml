@@ -21,9 +21,10 @@ steps:
   - '--quiet'
   - '--update-env-vars'
   - >-
-    MONGO_URI=$_MONGO_URI
-    SERVER_HOST=$_SERVER_HOST
-    SERVER_PORT=$_SERVER_PORT
+    NO_COLOR=true,
+    MONGO_URI=$_MONGO_URI,
+    SERVER_HOST=$_SERVER_HOST,
+    SERVER_PORT=$_SERVER_PORT,
     SERVICE_NAME=$_SERVICE_NAME
   # Allocate 100% of the traffic to latest revision
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
