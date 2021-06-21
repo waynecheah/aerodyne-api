@@ -1,0 +1,9 @@
+.DS_Store
+*.code-workspace
+.env.example
+.vscode
+dist
+Dockerfile*
+docker-componse.yml
+node_modules
+*.log

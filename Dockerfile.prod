@@ -1,0 +1,48 @@
+# Stage 1
+FROM node:16.3-alpine as api-builder
+LABEL stage=builder
+
+RUN apk --no-cache update \
+  && apk --no-cache upgrade \
+  && apk add --no-cache tzdata \
+  && npm install -g @nestjs/cli copyfiles
+
+WORKDIR /home/api
+
+COPY . .
+
+ENV NODE_ENV=development
+
+RUN npm ci \
+  && npm run build
+
+
+# Stage 2
+FROM node:16.3-alpine as api-production
+
+ENV HOME=/home
+ENV NODE_ENV=production
+ENV PORT=8080
+ENV TZ=Asia/Kuala_Lumpur
+
+RUN apk --no-cache update \
+  && apk --no-cache upgrade \
+  && apk add --no-cache curl py-pip tzdata
+
+EXPOSE $PORT
+
+WORKDIR $HOME/api
+
+COPY package*.json ./
+
+RUN npm ci --production \
+  && npm cache clean --force
+
+COPY --from=api-builder /home/api/dist ./dist
+COPY ./src/*.graphql ./dist
+
+RUN adduser -S node-app
+RUN chown -R node-app $HOME/api
+USER node-app
+
+CMD npm run start:prod
