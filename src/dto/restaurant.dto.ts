@@ -6,6 +6,7 @@ import {
   IsNotEmpty,
   IsOptional,
   IsString,
+  IsUrl,
   Length
 } from 'class-validator'
 
@@ -15,8 +16,8 @@ class RestaurantDto {
   @IsOptional()
   readonly _id?: string
 
-  @IsString()
-  @Length(1, 200)
+  @IsUrl()
+  @Length(0, 300)
   @IsOptional()
   readonly image: string
 
